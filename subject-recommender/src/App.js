@@ -1,8 +1,16 @@
+import { useState } from 'react';
 import './styles.css';
 
 function MyButton() {
+  const [color, setColor] = useState('red');
+
+  function handleColorChange() {
+    setColor((prevColor) => (prevColor === 'red' ? 'blue' : 'red'));
+  }
+  
+
   return (
-    <button className="button">I'm a button</button>
+    <button className="button" onClick={handleColorChange} style={{background: color}}>I'm a button</button>
   );
 }
 
