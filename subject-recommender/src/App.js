@@ -1,24 +1,13 @@
-import { useState } from 'react';
-import './styles.css';
+import React from "react";
+import Navbar from "./Components/Navbar";
 
-function MyButton() {
-  const [color, setColor] = useState('red');
 
-  function handleColorChange() {
-    setColor((prevColor) => (prevColor === 'red' ? 'blue' : 'red'));
-  }
-  
-
+function MyApp() {
   return (
-    <button className="button" onClick={handleColorChange} style={{background: color}}>I'm a button</button>
+    <React.Fragment>
+      <Navbar />
+    </React.Fragment>
   );
 }
 
-export default function MyApp() {
-  return (
-    <div>
-      <h1>Welcome to my app</h1>
-      <MyButton />
-    </div>
-  );
-}
+export default MyApp;
