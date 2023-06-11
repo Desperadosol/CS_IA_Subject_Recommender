@@ -12,12 +12,12 @@ function Navbar() {
 
     return (
         <header>
-            <h3>Logo</h3>
+            <img src="/default-monochrome-white.svg" alt="logo" />
             <nav ref={navRef}>
-                <a href="/#">Home</a>
-                <a href="/#">My work</a>
-                <a href="/#">Blog</a>
-                <a href="/#">About me</a>
+                <a className="hoverText" href="/#">Home</a>
+                <a className="hoverText" href="/#">My work</a>
+                <a className="hoverText" href="/#">Blog</a>
+                <a className="hoverText" href="/#">About me</a>
                 <button className="nav-btn nav-close-btn" onClick={showNavbar}>
                     <FaTimes />
                 </button>

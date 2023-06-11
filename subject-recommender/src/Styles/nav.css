@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap');
 
 * {
     padding: 0;
@@ -8,11 +8,17 @@
 }
 
 :root {
-    --main-color: #ffd100ff;
-    --main-color-light: #ffee32ff;
-    --secondary-color: #d6d6d6;
-    --secondary-color-option: #333D79FF;
-    --text-color: #202020;
+    --main-color: #202020;
+    --secondary-color: #ffd100ff;
+    --text-color: #ffffff;
+}
+
+.hoverText:hover {
+    /* color: var(--secondary-color); */
+    background: -webkit-linear-gradient(0deg, rgba(0,187,62,1) 0%, rgba(0,255,167,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 header {
@@ -25,15 +31,24 @@ header {
     color: var(--text-color);
 }
 
-nav a {
-    margin: 0 3rem;
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 1.4rem;
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: 10%;
 }
 
-nav a:hover {
-    color: var(--secondary-color-option);
+header img {
+    height: 50%;
+}
+
+nav a {
+    margin: 0 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
 }
 
 header .nav-btn {
@@ -45,6 +60,7 @@ header .nav-btn {
     visibility: hidden;
     opacity: 0;
     font-size: 1.8rem;
+    color: var(--text-color);
 }
 
 @media only screen and (max-width: 1024px) {
