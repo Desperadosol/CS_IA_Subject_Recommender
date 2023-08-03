@@ -1,0 +1,12 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #f5f5f5;
+}
+.links a {
+    margin-right: 15px;
+}
+.authButtons button {
+    margin-left: 10px;
+}
