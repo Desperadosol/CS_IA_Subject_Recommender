@@ -59,16 +59,17 @@ def generateSample(subjects: dict) -> dict:
         #These are exactly these language restrictions
         if key == "group1":
             firstLangName = value[0]['name']
-            sample.append(value[0])
+            sample.append(value[0]|{"group": f"{key}"})
         elif key == "group2":
             if firstLangName == value[0]['name']:
-                sample.append(value[1])
                 secondLangName = value[1]['name']
+                sample.append(value[1]|{"group": f"{key}"})
             else:
-                sample.append(value[0])
+                secondLangName = value[0]['name']
+                sample.append(value[0]|{"group": f"{key}"})
         else:
             #groups 3-5 are added from here
-            sample.append(value[0])
+            sample.append(value[0]|{"group": f"{key}"})
 
     #Our school doesn't provide the sixth group of subjects, so we have to choose from the existing groups
     #Moreover, I'm pretty sure that you can't choose second math or literature
@@ -78,7 +79,7 @@ def generateSample(subjects: dict) -> dict:
         for subject in subjects['group2']:
             if subject['name'] != firstLangName and subject['name'] != secondLangName:
                 secondGroupPick = subject
-        sample.append(sorted([secondGroupPick, subjects['group3'][1], subjects['group4'][1]], key=lambda x: x['score'], reverse=True)[0])          
+        sample.append(sorted([secondGroupPick, subjects['group3'][1], subjects['group4'][1]], key=lambda x: x['score'], reverse=True)[0]|{"group": "additional"})          
 
     #We have to sort the sample to deduce 'HL' and 'SL' subjects
     sample.sort(key=lambda x: x['score'], reverse=True)
@@ -87,3 +88,7 @@ def generateSample(subjects: dict) -> dict:
     return newSample
 
 pprint.pprint(generateSample(subjects))
+
+#probably I'll change the structure of newSample
+#namely I'll probaly make 'group' the key and then add a new attribute 'level'
+#It'll make it much easier to display on the website(Each block will correspond to a group of subjects)
