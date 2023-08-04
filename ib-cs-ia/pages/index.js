@@ -5,8 +5,7 @@ import Chat from '@/components/chat'
 export default function Home() {
     return (
         <Layout>
-            <h1 className={`${styles.heading}`}>Bitch</h1>
-            <Chat />
+            <h1 className={`${styles.heading}`}>Hello</h1>
         </Layout>
     );
 }
