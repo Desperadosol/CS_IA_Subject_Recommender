@@ -91,12 +91,6 @@ def generateSample(subjects: dict) -> list:
     # Sort by original index to restore original order
     newSample = [subject for _, subject in sorted(sorted_subjects, key=lambda x: x[0])]
 
-
-
     return newSample
 
 pprint.pprint(generateSample(subjects))
-
-#probably I'll change the structure of newSample
-#namely I'll probaly make 'group' the key and then add a new attribute 'level'
-#It'll make it much easier to display on the website(Each block will correspond to a group of subjects)
