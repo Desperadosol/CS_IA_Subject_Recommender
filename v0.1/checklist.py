@@ -82,7 +82,7 @@ def generateSample(subjects: dict) -> list:
                 secondGroupPick = subject
         sample.append(sorted([secondGroupPick, subjects['group3'][1], subjects['group4'][1]], key=lambda x: x['score'], reverse=True)[0]|{"group": "additional"})          
     
-
+    #python magic
     sorted_subjects = sorted(enumerate(sample), key=lambda x: (x[1]['score'], x[0]), reverse=True)
     # Assign 'level' based on index
     for i, (_, subject) in enumerate(sorted_subjects):
