@@ -55,5 +55,9 @@ subjectsDict = {
     'group5': [
         {"name":"Mathematics-AA", "score":100},
         {"name":"Mathematics-AI", "score":100},
-    ]
+    ],
+    # 'group6': [
+    #     {"name":"Art", "score":100},
+    #     {"name":"Music", "score":100}
+    # ] - checked
 }

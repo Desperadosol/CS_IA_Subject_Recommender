@@ -11,7 +11,7 @@ for key, value in subjects.items():
 
 pprint.pprint(subjects)
 
-def generateSample(subjects: dict) -> dict:
+def generateSample(subjects: dict) -> list:
     """
     This function is used to generate a sample of recommended subjects from the list of all subjects.
 
@@ -33,18 +33,19 @@ def generateSample(subjects: dict) -> dict:
         } 
 
     Returns:
-        dict with the following structure:
+        list with the following structure:
+        
+        [
+            {
+                'group': 'group1',
+                'level': 'HL',
+                'name': 'English',
+                'score': 95
+            },
+            ...
+        ]
 
-        {
-            'HL': [
-                {'name': 'English', 'score': 100},
-                ...
-            ],
-
-            'SL': [
-                ...
-            ],
-        }
+        
 
         Result always contains exactly 6 subjects: 3 'HL' and 3 'SL'
     """
@@ -80,10 +81,17 @@ def generateSample(subjects: dict) -> dict:
             if subject['name'] != firstLangName and subject['name'] != secondLangName:
                 secondGroupPick = subject
         sample.append(sorted([secondGroupPick, subjects['group3'][1], subjects['group4'][1]], key=lambda x: x['score'], reverse=True)[0]|{"group": "additional"})          
+    
 
-    #We have to sort the sample to deduce 'HL' and 'SL' subjects
-    sample.sort(key=lambda x: x['score'], reverse=True)
-    newSample = {'HL': sample[:3], 'SL': sample[3:]}
+    sorted_subjects = sorted(enumerate(sample), key=lambda x: (x[1]['score'], x[0]), reverse=True)
+    # Assign 'level' based on index
+    for i, (_, subject) in enumerate(sorted_subjects):
+        subject['level'] = 'HL' if i < 3 else 'SL'
+
+    # Sort by original index to restore original order
+    newSample = [subject for _, subject in sorted(sorted_subjects, key=lambda x: x[0])]
+
+
 
     return newSample
 
