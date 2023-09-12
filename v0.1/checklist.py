@@ -1,6 +1,9 @@
-from data import subjectsDict as subjects
 from random import randint
 import pprint
+import json
+
+with open('v0.1\subjects.json', 'r') as f:
+    subjects = json.load(f)
 
 for key, value in subjects.items():
     #this is temporary as scores will be generated not randomly in the future
