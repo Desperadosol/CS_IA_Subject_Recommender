@@ -1,31 +1,87 @@
-{
-    "group1": [
-        {"name":"English", "score":100},
-        {"name":"Polish", "score":100}
-    ],
-    "group2": [
-        {"name":"English", "score":100},
-        {"name":"Spanish", "score":100},
-        {"name":"German", "score":100}
-    ],
-    "group3": [
-        {"name":"Business&Management", "score":100},
-        {"name":"Geography", "score":100},
-        {"name":"History", "score":100},
-        {"name":"Psychology", "score":100}
-    ],
-    "group4": [
-        {"name":"Biology", "score":100},
-        {"name":"Physics", "score":100},
-        {"name":"Chemistry", "score":100},
-        {"name":"Computer-Science", "score":100}
-    ],
-    "group5": [
-        {"name":"Mathematics-AA", "score":100},
-        {"name":"Mathematics-AI", "score":100}
-    ],
-    "group6": [
-        {"name":"Art", "score":100},
-        {"name":"Music", "score":100}
-    ]
-}
+[
+    {
+        "name": "English",
+        "score": 50.0,
+        "group": "group1"
+    },
+    {
+        "name": "Polish",
+        "score": 50.0,
+        "group": "group1"
+    },
+    {
+        "name": "English",
+        "score": 50.0,
+        "group": "group2"
+    },
+    {
+        "name": "Spanish",
+        "score": 50.0,
+        "group": "group2"
+    },
+    {
+        "name": "German",
+        "score": 50.0,
+        "group": "group2"
+    },
+    {
+        "name": "Business&Management",
+        "score": 50.0,
+        "group": "group3"
+    },
+    {
+        "name": "Geography",
+        "score": 50.0,
+        "group": "group3"
+    },
+    {
+        "name": "History",
+        "score": 50.0,
+        "group": "group3"
+    },
+    {
+        "name": "Psychology",
+        "score": 50.0,
+        "group": "group3"
+    },
+    {
+        "name": "Biology",
+        "score": 50.0,
+        "group": "group4"
+    },
+    {
+        "name": "Physics",
+        "score": 50.0,
+        "group": "group4"
+    },
+    {
+        "name": "Chemistry",
+        "score": 50.0,
+        "group": "group4"
+    },
+    {
+        "name": "Computer-Science",
+        "score": 50.0,
+        "group": "group4"
+    },
+    {
+        "name": "Mathematics-AA",
+        "score": 50.0,
+        "group": "group5"
+    },
+    {
+        "name": "Mathematics-AI",
+        "score": 50.0,
+        "group": "group5"
+    },
+    {
+        "name": "Art",
+        "score": 50.0,
+        "group": "group6"
+    },
+    {
+        "name": "Music",
+        "score": 50.0,
+        "group": "group6"
+    }
+]
