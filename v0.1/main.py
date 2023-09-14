@@ -53,6 +53,12 @@ for i in target_indexes:
 print(target_list)
 
 
+model.fit(getAnswers(), [target_list], epochs=50)
 
 
+result = model.predict(getAnswers())
+subjects = setSubjectScores(transformProbIntoScores(result))
 
+recommendation = generateSample(subjects)
+
+pprint(recommendation)

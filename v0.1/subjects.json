@@ -1,87 +1,87 @@
 [
     {
         "name": "English",
-        "score": 50.0,
+        "score": 51.25,
         "group": "group1"
     },
     {
         "name": "Polish",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group1"
     },
     {
         "name": "English",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group2"
     },
     {
         "name": "Spanish",
-        "score": 50.0,
+        "score": 51.25,
         "group": "group2"
     },
     {
         "name": "German",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group2"
     },
     {
         "name": "Business&Management",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group3"
     },
     {
         "name": "Geography",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group3"
     },
     {
         "name": "History",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group3"
     },
     {
         "name": "Psychology",
-        "score": 50.0,
+        "score": 51.25,
         "group": "group3"
     },
     {
         "name": "Biology",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group4"
     },
     {
         "name": "Physics",
-        "score": 50.0,
+        "score": 51.25,
         "group": "group4"
     },
     {
         "name": "Chemistry",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group4"
     },
     {
         "name": "Computer-Science",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group4"
     },
     {
         "name": "Mathematics-AA",
-        "score": 50.0,
+        "score": 51.25,
         "group": "group5"
     },
     {
         "name": "Mathematics-AI",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group5"
     },
     {
         "name": "Art",
-        "score": 50.0,
+        "score": 51.25,
         "group": "group6"
     },
     {
         "name": "Music",
-        "score": 50.0,
+        "score": 48.75,
         "group": "group6"
     }
 ]
