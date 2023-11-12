@@ -2,6 +2,7 @@ import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { UserContext } from "@/lib/context";
 import debounce from 'lodash.debounce';
+import * as template from '@/templates/userTemplate'
 
 export default function Enter(props) {
     const { user, username } = useContext(UserContext);
@@ -56,7 +57,15 @@ function UsernameForm() {
 
         // Commit both docs together as a batch write.
         const batch = firestore.batch();
-        batch.set(userDoc, { username: formValue, photoURL: user.photoURL, displayName: user.displayName });
+        batch.set(userDoc, { username: formValue,
+                             photoURL: user.photoURL,
+                             displayName: user.displayName, 
+                             email: user.email, 
+                             recommendations: template.defaultRecommendations,
+                             answers: template.defaultAnswers,
+                             subjects: template.defaultSubjects,
+                             sample: template.defaultSample,
+                             tagets: template.defaultTargets });
         batch.set(usernameDoc, { uid: user.uid });
 
         await batch.commit();   
