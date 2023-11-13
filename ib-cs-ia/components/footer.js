@@ -6,5 +6,4 @@ export default function Footer() {
         <Link href="https://www.youtube.com/watch?v=jt9mM1jw7PE">In Paris</Link>
     </footer>
   );
-
 }
