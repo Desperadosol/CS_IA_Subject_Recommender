@@ -4,8 +4,6 @@ import 'firebase/compat/auth';
 import 'firebase/compat/firestore';
 import 'firebase/compat/storage';
 
-
-
 const firebaseConfig = {
     apiKey: "AIzaSyAc5HwslYL_NOblf_v4rz1i1iQG_2RjZR0",
     authDomain: "subject-recommender.firebaseapp.com",

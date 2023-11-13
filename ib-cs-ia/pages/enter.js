@@ -25,15 +25,18 @@ function SignInButton() {
     };
 
     return (
-        <button className='btn-google' onClick={signInWithGoogle}>
-            <img src={'/google.png'} /> Sign in with Google
-        </button>
+        <div className='mt-3 d-flex align-items-center'>
+          <button className='btn btn-outline-primary d-flex align-items-center' onClick={signInWithGoogle}>
+            Sign in with Google
+          </button>
+          <img src='/google.png' alt="Google" style={{ maxWidth: '32px', maxHeight: '32px' }} />
+        </div>
     );
 }
 
 //sign-out button
 function SignOutButton() {
-    return <button onClick={() => auth.signOut()}>Sign Out</button>
+    return <button className="btn btn-outline-danger" onClick={() => auth.signOut()}>Sign Out</button>
 }
 
 // Username form
@@ -65,7 +68,7 @@ function UsernameForm() {
                              answers: template.defaultAnswers,
                              subjects: template.defaultSubjects,
                              sample: template.defaultSample,
-                             tagets: template.defaultTargets });
+                             targets: template.defaultTargets });
         batch.set(usernameDoc, { uid: user.uid });
 
         await batch.commit();   

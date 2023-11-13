@@ -1,4 +1,3 @@
-import styles from '../styles/smth.module.css'
 import { UserContext } from "@/lib/context";
 import { useContext } from 'react';
 import Chat from '@/components/chat'
@@ -12,13 +11,19 @@ export default function Home() {
     return (
         <main>
             {user ? <h1>{user.displayName}</h1> : <h1>oops</h1>}
-            <Link href="/enter">
-                <button>Log in</button>
-            </Link>
-            <h1 className={`${styles.heading}`}>Hello</h1>
-            <button onClick={() => client.updateUserRecommendations("1")}>Predictions</button>
-            <button onClick={() => client.updateUserSample("1")}>Sample</button>
-            <button onClick={() => client.trainModelWithUserChoice("1")}>Train</button>
+            <div className="container">
+                <div className="row justify-content-between">
+                    <div className="col-auto">
+                        <button className="btn btn-primary btn-lg" onClick={() => client.updateUserRecommendations(user.uid)}>Predictions</button>
+                    </div>
+                    <div className="col-auto">
+                        <button className="btn btn-primary btn-lg" onClick={() => client.updateUserSample(user.uid)}>Sample</button>
+                    </div>
+                    <div className="col-auto">
+                        <button className="btn btn-primary btn-lg" onClick={() => client.trainModelWithUserChoice(user.uid)}>Train</button>
+                    </div>
+                </div>   
+            </div>
             <Targets />
         </main>
 
