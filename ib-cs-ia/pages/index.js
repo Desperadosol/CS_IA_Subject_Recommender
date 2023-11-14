@@ -1,7 +1,5 @@
 import { UserContext } from "@/lib/context";
 import { useContext } from 'react';
-import Chat from '@/components/chat'
-import Link from 'next/link';
 import Targets from '@/components/Targets'
 import  * as client from '../lib/client'
 
