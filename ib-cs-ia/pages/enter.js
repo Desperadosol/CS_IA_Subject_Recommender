@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback, useContext } from 'react';
 import { UserContext } from "@/lib/context";
 import debounce from 'lodash.debounce';
 import * as template from '@/templates/userTemplate'
+import SignUpCard from '@/components/SignUpCard';
 
 export default function Enter(props) {
     const { user, username } = useContext(UserContext);
@@ -12,7 +13,9 @@ export default function Enter(props) {
             {user ? 
                 !username ? <UsernameForm /> : <SignOutButton /> 
                 : 
-                <SignInButton />
+                <SignUpCard>
+                    <SignInButton />
+                </SignUpCard>
             }
         </main>
     );
