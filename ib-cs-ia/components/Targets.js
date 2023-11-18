@@ -81,7 +81,7 @@ export default function Targets() {
             stateHook={[group4, setGroup4]}
           />
         </div>
-        <div className="col-md-4 text-center">
+        <div className="col-md-4 border-end border-2 text-center">
           <div className="mb-3">
             <h4>Mathematical Studies</h4>
           </div>
