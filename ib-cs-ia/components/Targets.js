@@ -1,157 +1,124 @@
 import { updateUserTargets } from "@/lib/client";
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { UserContext } from "@/lib/context";
+
+import { defaultSubjects } from "@/templates/userTemplate";
 
 
 export default function Targets() {
   const { user, username } = useContext(UserContext);
 
-  const [targets, setTargets] = useState([
-    0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-  ]); // Adjust the initial state based on the number of checkboxes
+  const countSubjectsInGroup = (subjects, groupName) => subjects.filter(subject => subject.group === groupName).length;
+  const giveNamesForGroup = (subjects, groupName) => subjects.filter(subject => subject.group === groupName).map(subject => subject.name);
 
-  const handleCheckboxChange = (event, index) => {
-    const newTargets = [...targets];
-    newTargets[index] = event.target.checked ? 1 : 0;
-    setTargets(newTargets);
-  };
+  const [group1, setGroup1] = useState(Array(countSubjectsInGroup(defaultSubjects, 'group1')).fill(0).map((v, i) => i === 0 ? 1 : v)); 
+  const [group2, setGroup2] = useState(Array(countSubjectsInGroup(defaultSubjects, 'group2')).fill(0).map((v, i) => i === 0 ? 1 : v)); 
+  const [group3, setGroup3] = useState(Array(countSubjectsInGroup(defaultSubjects, 'group3')).fill(0).map((v, i) => i === 0 ? 1 : v)); 
+  const [group4, setGroup4] = useState(Array(countSubjectsInGroup(defaultSubjects, 'group4')).fill(0).map((v, i) => i === 0 ? 1 : v)); 
+  const [group5, setGroup5] = useState(Array(countSubjectsInGroup(defaultSubjects, 'group5')).fill(0).map((v, i) => i === 0 ? 1 : v)); 
 
-  const handleSubmit = (event) => {
+  const [selectedValues, setSelectedValues] = useState([...group1, ...group2, ...group3, ...group4, ...group5]);
+  const [error, setError] = useState(true);
+
+  useEffect(() => {
+    setSelectedValues([...group1, ...group2, ...group3, ...group4, ...group5]);
+    if ((group1[0] + group2[0] != 2) && group1.reduce((a,b) => a + b, 0) === 1 && group2.some(option => option === 1) && group3.some(option => option === 1) && group4.some(option => option === 1) && group5.reduce((a,b) => a + b, 0) === 1 && selectedValues.reduce((a,b) => a + b, 0) === 6) {
+      setError(false);
+    } else {
+      setError(true);
+    }
+  }, [group1, group2, group3, group4, group5, selectedValues] );
+
+  function onSubmit(event) {
     event.preventDefault();
-    // Call a function to update the user in Firestore (see step 2)
-    updateUserTargets(user.uid, targets);
-  };
+
+    updateUserTargets(user.uid, selectedValues);
+  }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="checkbox"
-        id="target1"
-        name="target1"
-        onChange={(e) => handleCheckboxChange(e, 0)}
-      />{" "}
-      Target 1<br />
-      <input
-        type="checkbox"
-        id="target2"
-        name="target2"
-        onChange={(e) => handleCheckboxChange(e, 1)}
-      />{" "}
-      Target 2<br />
-      <input
-        type="checkbox"
-        id="target3"
-        name="target3"
-        onChange={(e) => handleCheckboxChange(e, 2)}
-      />{" "}
-      Target 3<br />
-      <input
-        type="checkbox"
-        id="target4"
-        name="target4"
-        onChange={(e) => handleCheckboxChange(e, 3)}
-      />{" "}
-      Target 4<br />
-      <input
-        type="checkbox"
-        id="target5"
-        name="target5"
-        onChange={(e) => handleCheckboxChange(e, 4)}
-      />{" "}
-      Target 5<br />
-      <input
-        type="checkbox"
-        id="target6"
-        name="target6"
-        onChange={(e) => handleCheckboxChange(e, 5)}
-      />{" "}
-      Target 6<br />
-      <input
-        type="checkbox"
-        id="target7"
-        name="target7"
-        onChange={(e) => handleCheckboxChange(e, 6)}
-      />{" "}
-      Target 7<br />
-      <input
-        type="checkbox"
-        id="target8"
-        name="target8"
-        onChange={(e) => handleCheckboxChange(e, 7)}
-      />{" "}
-      Target 8<br />
-      <input
-        type="checkbox"
-        id="target9"
-        name="target9"
-        onChange={(e) => handleCheckboxChange(e, 8)}
-      />{" "}
-      Target 9<br />
-      <input
-        type="checkbox"
-        id="target10"
-        name="target10"
-        onChange={(e) => handleCheckboxChange(e, 9)}
-      />{" "}
-      Target 10
-      <br />
-      <input
-        type="checkbox"
-        id="target11"
-        name="target11"
-        onChange={(e) => handleCheckboxChange(e, 10)}
-      />{" "}
-      Target 11
-      <br />
-      <input
-        type="checkbox"
-        id="target12"
-        name="target12"
-        onChange={(e) => handleCheckboxChange(e, 11)}
-      />{" "}
-      Target 12
-      <br />
-      <input
-        type="checkbox"
-        id="target13"
-        name="target13"
-        onChange={(e) => handleCheckboxChange(e, 12)}
-      />{" "}
-      Target 13
-      <br />
-      <input
-        type="checkbox"
-        id="target14"
-        name="target14"
-        onChange={(e) => handleCheckboxChange(e, 13)}
-      />{" "}
-      Target 14
-      <br />
-      <input
-        type="checkbox"
-        id="target15"
-        name="target15"
-        onChange={(e) => handleCheckboxChange(e, 14)}
-      />{" "}
-      Target 15
-      <br />
-      <input
-        type="checkbox"
-        id="target16"
-        name="target16"
-        onChange={(e) => handleCheckboxChange(e, 15)}
-      />{" "}
-      Target 16
-      <br />
-      <input
-        type="checkbox"
-        id="target17"
-        name="target17"
-        onChange={(e) => handleCheckboxChange(e, 16)}
-      />{" "}
-      Target 17
-      <br />
-      <input type="submit" value="Submit" />
+    <form onSubmit={onSubmit} className="mb-4">
+      <div className="row">
+        <div className="col-md-4 border-end border-2 text-center">
+          <div className="mb-3">
+            <h4>Studies in language and literature</h4>
+          </div>
+          <CheckboxGroup
+            options={giveNamesForGroup(defaultSubjects, 'group1')}
+            groupName="group1"
+            stateHook={[group1, setGroup1]}
+          />
+        </div>
+        <div className="col-md-4 border-end border-2 text-center">
+          <div className="mb-3">
+            <h4>Language Acquisition</h4>
+          </div>
+          <CheckboxGroup
+            options={giveNamesForGroup(defaultSubjects, 'group2')}
+            groupName="group2"
+            stateHook={[group2, setGroup2]}
+          />
+        </div>
+        <div className="col-md-4 text-center">
+          <div className="mb-3">
+            <h4>Individuals and Societies</h4>
+          </div>
+          <CheckboxGroup
+            options={giveNamesForGroup(defaultSubjects, 'group3')}
+            groupName="group3"
+            stateHook={[group3, setGroup3]}
+          />
+        </div>
+      </div>
+
+      <div className="row mt-3">
+        <div className="col-md-4 border-end border-2 text-center">
+          <div className="mb-3">
+            <h4>Experimental Sciences</h4>
+          </div>
+          <CheckboxGroup
+            options={giveNamesForGroup(defaultSubjects, 'group4')}
+            groupName="group4"
+            stateHook={[group4, setGroup4]}
+          />
+        </div>
+        <div className="col-md-4 text-center">
+          <div className="mb-3">
+            <h4>Mathematical Studies</h4>
+          </div>
+          <CheckboxGroup
+            options={giveNamesForGroup(defaultSubjects, 'group5')}
+            groupName="group5"
+            stateHook={[group5, setGroup5]}
+          />
+        </div>
+      </div>
+
+      <div className="mt-3 text-center">
+        <button type="submit" className="btn btn-outline-success btn-lg" disabled={error}>
+          Submit
+        </button>
+      </div>
     </form>
   );
 }
+
+function CheckboxGroup({options, groupName, stateHook}) {
+  const [selectedOption, setSelectedOption] = stateHook;
+ 
+  function onChangeValue(event) {
+    const index = options.indexOf(event.target.value);
+    let newState = [...selectedOption];
+    newState[index] = newState[index] === 1 ? 0 : 1;
+    setSelectedOption(newState);
+  }
+ 
+  return (
+    <div onChange={onChangeValue} className="d-flex flex-column align-items-center">
+      {options.map((option, index) => 
+        <div key={option}>
+           <label style={{width: "250px"}} className={`btn btn-lg m-1 ${selectedOption[index] === 1 ? 'btn-dark' : 'btn-outline-dark'}`}> <input type="checkbox" value={option} name={groupName} checked={selectedOption[index] === 1} onChange={onChangeValue} className="btn-check"/> {option} </label>
+        </div>
+      )}
+    </div>
+  );
+ }

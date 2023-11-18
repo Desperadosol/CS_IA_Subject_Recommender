@@ -109,27 +109,28 @@ function UsernameForm() {
 
     return (
         !username && (
-            <section>
-                <h3>Choose a username</h3>
-                <form onSubmit={onSubmit}>
-                    
-                    <input name="username" placeholder="username" value={formValue} onChange={onChange} />
-                    
-                    <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
-                     
-                    <button type="submit" className="btn-green" disabled={!isValid}>
-                        Choose
-                    </button>
-
-                    <h3>Debug State</h3>
-                    <div>
-                        Username: {formValue}
-                        <br />
-                        Loading: {loading.toString()}
-                        <br />
-                        Username Valid: {isValid.toString()}
+            <section className="d-flex justify-content-center align-items-center vh-100" style={{backgroundColor: "#fcba03"}}>
+                <div className="card" style={{width: "24rem"}}>
+                    <div className="card-body">
+                        <h3 className="card-title mb-3">Choose a username</h3>
+                        <form onSubmit={onSubmit} className="d-flex flex-column">
+                            <div className="form-group">
+                                <label className="mb-3 h5" htmlFor="username">Username</label>
+                                <input type="text" className="form-control" id="username" placeholder="username" value={formValue} onChange={onChange} />
+                            </div>
+                            <UsernameMessage username={formValue} isValid={isValid} loading={loading} />
+                            <button type="submit" className="btn btn-primary mt-3" disabled={!isValid}>
+                                Choose
+                            </button>
+                            <h3 className="mt-3">Debug State</h3>
+                            <div>
+                                <p>Username: {formValue}</p>
+                                <p>Loading: {loading.toString()}</p>
+                                <p>Username Valid: {isValid.toString()}</p>
+                            </div>
+                        </form>
                     </div>
-                </form>
+                </div>
             </section>
         )
     );

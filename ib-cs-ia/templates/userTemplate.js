@@ -1,7 +1,5 @@
 const numberOfAnswers = 10;
 
-const numberOfSubjects = 17;
-
 export const defaultAnswers = new Array(numberOfAnswers).fill(0)
 
 export const defaultSubjects = [
@@ -12,6 +10,11 @@ export const defaultSubjects = [
     },
     {
         "name": "Polish",
+        "score": 0.0,
+        "group": "group1"
+    },
+    {
+        "name": "Self-taught",
         "score": 0.0,
         "group": "group1"
     },
@@ -79,18 +82,10 @@ export const defaultSubjects = [
         "name": "Mathematics-AI",
         "score": 0.0,
         "group": "group5"
-    },
-    {
-        "name": "Art",
-        "score": 0.0,
-        "group": "group6"
-    },
-    {
-        "name": "Music",
-        "score": 0.0,
-        "group": "group6"
     }
 ]
+
+const numberOfSubjects = defaultSubjects.length;
 
 export const defaultSample = []
 
