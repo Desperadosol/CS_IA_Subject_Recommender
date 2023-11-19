@@ -1,4 +1,25 @@
-const numberOfAnswers = 10;
+export const questions = [
+    "I find the sciences intriguing and enjoyable.",
+    "I find exploring various historical events and their impact on the present fascinating.",
+    "In terms of my interests, the prospect of delving into different cultures and languages seems appealing.",
+    "I feel confident in my mathematical abilities and find joy in solving complex problems.",
+    "In my opinion, studying economic principles is a necessity in today's world.",
+    "I am open to the idea of investigating environmental issues and their global implications.",
+    "I find understanding political systems and their effects on societies important.",
+    "I believe learning a second language would be beneficial for my future goals.",
+    "I enjoy analyzing literature and exploring the complexities of language.",
+    "I would like to study the human mind and behavior.",
+    "I am interested in the application of technological solutions to real-world problems.",
+    "I value physical activity and health, and see the importance of learning more about the human body.",
+    "In terms of my career aspirations, I believe business and management knowledge is crucial.",
+    "I agree with the idea that a well-rounded education includes learning about diverse historical periods and events.",
+    "I feel confident in my ability to perform laboratory experiments and analyze results.",
+    "I am interested in the application of physics in understanding the fundamental nature of the universe.",
+    "In terms of my career goals, I believe knowledge of creative writing and storytelling is essential.",
+    "I am open to exploring my creativity through problem-solving and mathematical exploration."
+]
+
+const numberOfAnswers = questions.length;
 
 export const defaultAnswers = new Array(numberOfAnswers).fill(0)
 

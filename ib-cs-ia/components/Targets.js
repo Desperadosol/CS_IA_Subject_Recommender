@@ -36,7 +36,7 @@ export default function Targets() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="mb-4">
+    <form onSubmit={onSubmit} className="m-4">
       <div className="row">
         <div className="col-md-4 border-end border-2 text-center">
           <div className="mb-3">

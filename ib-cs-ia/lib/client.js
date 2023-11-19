@@ -1,6 +1,17 @@
 import axios from 'axios';
 import { getUser, updateUser } from './firestore_interface.js';
 
+export async function updateUserAnswers(uid, answers) {
+  const data = await getUser(uid);
+  data.answers = answers
+  updateUser(uid, data)
+}
+
+export async function updateUserTargets(uid, targets) {
+  const data = await getUser(uid);
+  data.targets = targets
+  updateUser(uid, data)
+}
 
 export async function updateUserRecommendations(uid) {
   const data = await getUser(uid);
@@ -12,12 +23,6 @@ export async function updateUserRecommendations(uid) {
   data.recommendations = response.data.recommendations;
   data.subjects = response.data.subjects;
 
-  updateUser(uid, data)
-}
-
-export async function updateUserTargets(uid, targets) {
-  const data = await getUser(uid);
-  data.targets = targets
   updateUser(uid, data)
 }
 

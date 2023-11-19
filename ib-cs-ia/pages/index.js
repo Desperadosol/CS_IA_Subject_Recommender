@@ -1,6 +1,8 @@
 import { UserContext } from "@/lib/context";
 import { useContext } from 'react';
 import Targets from '@/components/Targets'
+import Questions from "@/components/Questions";
+
 import  * as client from '../lib/client'
 
 export default function Home() {
@@ -24,6 +26,7 @@ export default function Home() {
             </div>
             <br/>
             <br/>
+            <Questions />
             <Targets />
         </main>
 
