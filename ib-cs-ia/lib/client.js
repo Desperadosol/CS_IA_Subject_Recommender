@@ -17,7 +17,8 @@ export async function updateUserRecommendations(uid) {
   const data = await getUser(uid);
   // console.log(data)
 
-  const response = await axios.post('http://127.0.0.1:5000/api/prediction', data);
+  // const response = await axios.post('http://127.0.0.1:5000/api/prediction', data);
+  const response = await axios.post('https://servernn-production.up.railway.app/api/prediction', data);
   // code
 
   data.recommendations = response.data.recommendations;
@@ -29,7 +30,7 @@ export async function updateUserRecommendations(uid) {
 export async function updateUserSample(uid) {
   const data = await getUser(uid);
   
-  const response = await axios.post('http://127.0.0.1:5000/api/sample', data);
+  const response = await axios.post('https://servernn-production.up.railway.app/api/sample', data);
 
   data.sample = response.data.sample;
 
@@ -40,7 +41,7 @@ export async function trainModelWithUserChoice(uid) {
   const data = await getUser(uid);
   // console.log(data)
 
-  const response = await axios.post('http://127.0.0.1:5000/api/train', data);
+  const response = await axios.post('https://servernn-production.up.railway.app/api/train', data);
   // console.log(response.data);
 
 }
