@@ -109,7 +109,7 @@ function UsernameForm() {
 
     return (
         !username && (
-            <section className="d-flex justify-content-center align-items-center vh-100" style={{backgroundColor: "#fcba03"}}>
+            <section className="d-flex justify-content-center align-items-center vh-100" style={{backgroundColor: "var(--primary)"}}>
                 <div className="card" style={{width: "24rem"}}>
                     <div className="card-body">
                         <h3 className="card-title mb-3">Choose a username</h3>
