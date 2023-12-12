@@ -5,7 +5,7 @@ import Questions from "@/components/Questions";
 import HomeSection from '@/components/HomeSection';
 import FeatureSection from "@/components/FeatureSection";
 import TechnologiesSection from "@/components/TechnologiesSection";
-
+import HowItWorks from "@/components/HowItWorks";
 
 import  * as client from '../lib/client'
 
@@ -16,7 +16,7 @@ export default function Home() {
         <main>
             <HomeSection />
             <FeatureSection />
-            {/* how it works section */}
+            <HowItWorks />
             <TechnologiesSection />
         </main>
     );

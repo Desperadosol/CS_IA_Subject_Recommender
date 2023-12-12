@@ -1,8 +1,8 @@
 export default function FeatureSection() {
     return (
       <section className="text-center my-5" >
-        <h1 style={{marginBottom: "32px"}}>What makes us <span style={{textDecoration: "underline", textDecorationColor: "var(--primary)"}}>special</span>?</h1>
-        <div className="row">
+        <h1 className="display-4 fw-semibold" style={{marginBottom: "32px"}}>What makes us <span style={{textDecoration: "underline", textDecorationColor: "var(--primary)"}}>special</span>?</h1>
+        <div className="row" style={{marginBottom: "128px"}}>
           <div className="col-md-4">
             <img src="/ai-feature-icon.png" width="128" style={{marginTop: "32px"}}/>
             <h3 className="mt-4"><span style={{textDecoration: "underline", textDecorationColor: "var(--primary)"}}>AI-powered</span> algorithm</h3>
