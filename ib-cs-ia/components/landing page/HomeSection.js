@@ -1,5 +1,3 @@
-import '../styles/HomeSection.module.css'
-
 export default function HomeSection() {
     return (
         <section className="" style={{height: "100vh", backgroundImage: `url(/student-bg-dark.png)`, backgroundSize: "cover"}}>
