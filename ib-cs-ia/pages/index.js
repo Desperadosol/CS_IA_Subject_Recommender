@@ -16,6 +16,7 @@ export default function Home() {
         <main>
             <HomeSection />
             <FeatureSection />
+            {/* how it works section */}
             <TechnologiesSection />
         </main>
     );
