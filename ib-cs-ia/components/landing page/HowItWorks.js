@@ -40,11 +40,10 @@ export default function HowItWorks() {
           </div>
         </div>
       </div>
-
       <style jsx>{`
         .how-it-works-section {
             background: rgb(0,0,0);
-            background: linear-gradient(160deg, rgba(0,0,0,1) 0%, rgba(50,50,50,1) 90%);
+            background: linear-gradient(170deg, rgba(0,0,0,1) 30%, rgba(50,50,50,1) 90%);
             padding: 80px 0;
         }
 
