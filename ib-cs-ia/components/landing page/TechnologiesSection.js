@@ -67,7 +67,7 @@ export default function TechnologiesSection() {
       <style jsx>{`
         .custom-shape-divider-bottom-1702597863 {
           position: absolute;
-          bottom: 0;
+          bottom: -1px;
           left: 0;
           width: 100%;
           overflow: hidden;

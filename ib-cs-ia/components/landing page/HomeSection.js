@@ -11,6 +11,7 @@ export default function HomeSection() {
             x: 0,
             transition: {
                 duration: 1.5,
+                delay: 0.15,
             },
         },
         show2: {
@@ -18,7 +19,7 @@ export default function HomeSection() {
             x: 0,
             transition: {
                 duration: 1.5,
-                delay: 0.5
+                delay: 0.4
             },
         },
         show3: {
@@ -26,7 +27,7 @@ export default function HomeSection() {
             x: 0,
             transition: {
                 duration: 1.5,
-                delay: 0.75
+                delay: 0.7
             },
         },
     };
