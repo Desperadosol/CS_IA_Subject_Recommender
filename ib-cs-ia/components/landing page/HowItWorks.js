@@ -1,76 +1,8 @@
-import { motion } from "framer-motion";
 // The way to improve, create video for each step of the user path and allocate text next to the video, also create a "path" - a narrow line between the videos
 export default function HowItWorks() {
-  const introHeaderVariants = {
-    hide1: {
-        opacity: 0,
-        y: -200,
-    },
-    hide2: {
-      opacity: 0,
-      y: -170,
-    },
-    hide3: {
-      opacity: 0,
-      y: -140,
-    },
-    hide4: {
-      opacity: 0,
-      y: -110,
-    },
-    hide5: {
-      opacity: 0,
-      y: -80,
-    },
-    show1: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1.5,
-            delay: 0.3
-        },
-    },
-    show2: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1.5,
-            delay: 0.3
-            
-        },
-    },
-    show3: {
-        opacity: 1,
-        y: 0,
-        transition: {
-            duration: 1.5,
-            delay: 0.3
-            
-        },
-    },
-    show4: {
-      opacity: 1,
-      y: 0,
-      transition: {
-          duration: 1.5,
-          delay: 0.3
-          
-      },
-    },
-    show5: {
-      opacity: 1,
-      y: 0,
-      transition: {
-          duration: 1.5,
-          delay: 0.3
-          
-      },
-    },
-  
-  };
   return (
     <section className="how-it-works-section">
-      <div className="container mb-4" style={{ minWidth: "80%" }}>
+      <div className="container mb-5" style={{ minWidth: "80%" }}>
         <h2
           className="text-center text-white display-4 fw-semibold"
           style={{ marginBottom: "64px" }}
@@ -97,40 +29,40 @@ export default function HowItWorks() {
             </div>
           </div>
           <div className="col-md-6 text-center" style={{ padding: "0px 24px" }}>
-            <motion.div initial="hide1" whileInView="show1" exit="hide1" variants={introHeaderVariants} className="text-container">
+            <div className="text-container">
               <h3 className="text-white">Complete Form</h3>
               <p className="text-white fs-5">
                 Users answer a form with preferences
               </p>
-            </motion.div>
-            <motion.div initial="hide2" whileInView="show2" exit="hide2" variants={introHeaderVariants} className="m-2">
+            </div>
+            <div className="m-2">
               <img
                 src="/arrow.png"
                 alt=""
                 width="48px"
                 style={{ transform: "rotate(90deg)" }}
               />
-            </motion.div>
-            <motion.div initial="hide3" whileInView="show3" exit="hide3" variants={introHeaderVariants} className="text-container">
+            </div>
+            <div className="text-container">
               <h3 className="text-white">AI Recommendations</h3>
               <p className="text-white fs-5">
                 Our neural network suggests personalized IB subjects
               </p>
-            </motion.div>
-            <motion.div initial="hide4" whileInView="show4" exit="hide4" variants={introHeaderVariants} className="m-2">
+            </div>
+            <div className="m-2">
               <img
                 src="/arrow.png"
                 alt=""
                 width="48px"
                 style={{ transform: "rotate(90deg)" }}
               />
-            </motion.div>
-            <motion.div initial="hide5" whileInView="show5" exit="hide5" variants={introHeaderVariants} className="text-container">
+            </div>
+            <div className="text-container">
               <h3 className="text-white">Adjust as Needed</h3>
               <p className="text-white fs-5">
                 Users review and fine-tune recommendations
               </p>
-            </motion.div>
+            </div>
           </div>
         </div>
       </div>

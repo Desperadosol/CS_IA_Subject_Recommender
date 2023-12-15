@@ -36,7 +36,7 @@ const TechnologyCard = ({ iconURL, name, description, link }) => (
 export default function TechnologiesSection() {
   return (
     <section className="py-4" style={{backgroundColor: "var(--primary)", position: "relative"}}>
-      <h2 className="mb-4 display-4 fw-semibold text-center">Powered By</h2>
+      <h2 className="my-4 display-4 fw-semibold text-center">Powered By</h2>
       <div className="row mb-5">
         <TechnologyCard
           iconURL="/tensorflow.svg"
