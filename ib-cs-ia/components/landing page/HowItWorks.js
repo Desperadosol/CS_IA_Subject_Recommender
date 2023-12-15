@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+// The way to improve, create video for each step of the user path and allocate text next to the video, also create a "path" - a narrow line between the videos
 export default function HowItWorks() {
   const introHeaderVariants = {
     hide1: {
