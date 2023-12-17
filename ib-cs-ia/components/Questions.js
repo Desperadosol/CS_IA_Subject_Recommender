@@ -73,7 +73,7 @@ export default function Questions() {
             </div>
             <div className='d-flex justify-content-around align-items-end'>
               {[0, 0.2, 0.4, 0.6, 0.8, 1].map(value => (
-                <label key={value} className={`btn m-1 btn${userAnswers[currentQuestion] === value ? '' : '-outline'}${value >= 0.5 ? '-success' : '-danger'} ${value === 0.4 || value === 0.6 ? 'btn-sm' : value === 0 || value === 1 ? 'btn-lg' : ''}`} style={{borderRadius: "30%"}}>
+                <label key={value} className={`btn m-1 btn${userAnswers[currentQuestion] === value ? '' : '-outline'}${value >= 0.5 ? '-success' : '-danger'} ${value === 0.4 || value === 0.6 ? 'btn-sm' : value === 0 || value === 1 ? 'btn-lg' : ''}`} style={{borderRadius: "30%", borderWidth: "3px"}}>
                   <input
                     type="radio"
                     name="answer"
