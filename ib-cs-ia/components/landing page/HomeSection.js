@@ -40,7 +40,7 @@ export default function HomeSection() {
                         <motion.h2 initial="hide" whileInView="show2" exit="hide" variants={introHeaderVariants} className="display-6 fw-semibold" style={{color: "var(--primary)", marginLeft: "5%"}}>With AI-powered subject recommender</motion.h2>
                     </div>
                     <div className="m-4">
-                        <motion.button initial="hide" whileInView="show3" exit="hide" variants={introHeaderVariants} className="btn underline" style={{marginLeft: "5%"}}>
+                        <motion.button initial="hide" whileInView="show3" exit="hide" variants={introHeaderVariants} className="" style={{marginLeft: "5%", outline: "none", border: "none", background: "none"}}>
                             <a href="/survey" className="display-5 fw-semibold link-underline-warning link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "var(--primary)"}}>Try Now &rarr;</a>
                         </motion.button>
                     </div>

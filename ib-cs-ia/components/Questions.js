@@ -28,7 +28,7 @@ export default function Questions() {
         },
     }
   };
-  const { user } = useContext(UserContext);
+  const { user, username } = useContext(UserContext);
   const router = useRouter();
 
   const [userAnswers, setUserAnswers] = useState(Array(questions.length).fill(null));
@@ -50,7 +50,7 @@ export default function Questions() {
     // Check if all questions have been answered
     if (userAnswers.every(answer => answer !== null)) {
       updateUserAnswers(user.uid, userAnswers);
-      router.push('/enter');
+      router.push(`/${username}`);
     } else {
       alert('Please answer all questions before submitting.');
     }
