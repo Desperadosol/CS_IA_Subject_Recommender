@@ -3,7 +3,8 @@ import { useEffect, useState, useCallback, useContext } from 'react';
 import { UserContext } from "@/lib/context";
 import debounce from 'lodash.debounce';
 import * as template from '@/templates/userTemplate'
-import SignUpCard from '@/components/SignUpCard';
+import SignUpSection from '@/components/SignUpSection';
+import { useRouter } from 'next/router';
 
 export default function Enter(props) {
     const { user, username } = useContext(UserContext);
@@ -11,11 +12,11 @@ export default function Enter(props) {
     return (
         <main>
             {user ? 
-                !username ? <UsernameForm /> : <SignOutButton /> 
+                !username ? <UsernameForm /> : <Successful /> 
                 : 
-                <SignUpCard>
+                <SignUpSection>
                     <SignInButton />
-                </SignUpCard>
+                </SignUpSection>
             }
         </main>
     );
@@ -24,7 +25,7 @@ export default function Enter(props) {
 //sign in with google button
 function SignInButton() {
     const signInWithGoogle = async () => {
-        await auth.signInWithPopup(googleAuthProvider);
+        await auth.signInWithPopup(googleAuthProvider); 
     };
 
     return (
@@ -38,8 +39,17 @@ function SignInButton() {
 }
 
 //sign-out button
-function SignOutButton() {
-    return <button className="btn btn-outline-danger" onClick={() => auth.signOut()}>Sign Out</button>
+function Successful() {
+    return (
+        <section className="d-flex justify-content-center align-items-center vh-100" style={{backgroundColor: "var(--primary)"}}>
+            <div className="card" style={{width: "24rem", height: "12rem"}}>
+                <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                    <h2 className="card-title mb-3">You're signed in</h2>
+                    <a href="/" className="fs-5 link-underline-dark link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "black"}}>Go to the starting page&rarr;</a>
+                </div>
+            </div>
+        </section>
+    ); 
 }
 
 // Username form
@@ -49,6 +59,8 @@ function UsernameForm() {
     const [loading, setLoading] = useState(false);
 
     const { user, username } = useContext(UserContext);
+
+    const router = useRouter();
 
     useEffect(() => {
         checkUsername(formValue);
@@ -74,7 +86,8 @@ function UsernameForm() {
                              targets: template.defaultTargets });
         batch.set(usernameDoc, { uid: user.uid });
 
-        await batch.commit();   
+        await batch.commit();
+        router.push('/');
     };
 
     const onChange = (e) => {
