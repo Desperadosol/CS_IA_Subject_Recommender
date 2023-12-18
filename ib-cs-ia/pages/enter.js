@@ -3,7 +3,7 @@ import { useEffect, useState, useCallback, useContext } from 'react';
 import { UserContext } from "@/lib/context";
 import debounce from 'lodash.debounce';
 import * as template from '@/templates/userTemplate'
-import SignUpSection from '@/components/SignUpSection';
+import AlertCard from '@/components/AlertCard';
 import { useRouter } from 'next/router';
 
 export default function Enter(props) {
@@ -12,11 +12,22 @@ export default function Enter(props) {
     return (
         <main>
             {user ? 
-                !username ? <UsernameForm /> : <Successful /> 
+                !username ? <UsernameForm /> 
                 : 
-                <SignUpSection>
+                <AlertCard>
+                    <div className="card-body d-flex flex-column justify-content-center align-items-center">
+                        <h2 className="card-title mb-3">You're signed in</h2>
+                        <a href="/" className="fs-5 link-underline-dark link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "black"}}>Go to the starting page&rarr;</a>
+                    </div>
+                </AlertCard> 
+                : 
+                <AlertCard>
+                    <div>
+                        <h5 className="card-title">Sign Up</h5>
+                        <p className="card-text">Please sign up using your Google account.</p>
+                    </div>
                     <SignInButton />
-                </SignUpSection>
+                </AlertCard>
             }
         </main>
     );
@@ -39,18 +50,7 @@ function SignInButton() {
 }
 
 //sign-out button
-function Successful() {
-    return (
-        <section className="d-flex justify-content-center align-items-center vh-100" style={{backgroundColor: "var(--primary)"}}>
-            <div className="card" style={{width: "24rem", height: "12rem"}}>
-                <div className="card-body d-flex flex-column justify-content-center align-items-center">
-                    <h2 className="card-title mb-3">You're signed in</h2>
-                    <a href="/" className="fs-5 link-underline-dark link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "black"}}>Go to the starting page&rarr;</a>
-                </div>
-            </div>
-        </section>
-    ); 
-}
+
 
 // Username form
 function UsernameForm() {
