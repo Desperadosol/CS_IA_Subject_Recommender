@@ -4,25 +4,26 @@ import { getUserWithUsername } from "@/lib/firestore_interface";
 
 export async function getServerSideProps({ query }) {
     const { username } = query;
-    const user = await getUserWithUsername(username);
+    const userDoc = await getUserWithUsername(username);
 
     // If no user, short circuit to 404 page
-    if (!user) {
+    if (!userDoc) {
         return {
             notFound: true,
         };
     }
 
+    let userData = userDoc.data();
     return {
-        props: { user }, // will be passed to the page component as props
+        props: { userData }, // will be passed to the page component as props
     };
 
 }
-export default function UserProfilePage({ user }) {
+export default function UserProfilePage({ userData }) {
     return (
         <main>
-            <UserProfile />
-            <Subjects />
+            <UserProfile user={userData}/>
+            <Subjects subjects={userData.sample}/>
         </main>
     );
 }

@@ -21,6 +21,6 @@ export async function getUserWithUsername(username) {
 	const usersRef = firestore.collection('users');
 	const query = usersRef.where('username', '==', username).limit(1);
 	const userDoc = (await query.get()).docs[0];
-	return userDoc.data();
+	return userDoc;
 }
 
