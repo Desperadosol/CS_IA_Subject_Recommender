@@ -57,14 +57,14 @@ export default function Questions() {
   };
 
   return (
-    <section className="d-flex flex-column justify-content-center" style={{height: "80%"}}>
+    <section className="d-flex flex-column justify-content-center align-items-center" style={{height: "80%"}}>
       <div className='text-center mb-4'>
         <motion.h1 initial="hide" whileInView="show1" exit="hide" variants={introHeaderVariants} className='text-black display-2 fw-semibold'>Complete the Form</motion.h1>
-        <motion.h3 initial="hide" whileInView="show2" exit="hide" variants={introHeaderVariants} className='text-black mb-4 fs-5'>Please provide your answers below. Each question requires a response to proceed.</motion.h3>
+        <motion.h3 initial="hide" whileInView="show2" exit="hide" variants={introHeaderVariants} className='text-black mb-4 fs-4'>Please provide your answers below. Each question requires a response to proceed.</motion.h3>
       </div>
-      <div className='card d-flex flex-column align-items-center text-center bg-dark' style={{minWidth: "50%", borderRadius: "16px"}}>
-        <div className='card-body px-2' >
-          <h3 className='card-title text-white my-4'>{questions[currentQuestion]}</h3>
+      <div className='card d-flex flex-column align-items-center text-center bg-dark' style={{minWidth: "50%", maxWidth: "700px", borderRadius: "16px"}}>
+        <div className='card-body px-4' >
+          <h3 className='card-title text-white mb-4 mt-2'>{questions[currentQuestion]}</h3>
           <hr className="mb-4" style={{width: "100%", color: 'white'}}/>
           <div className='my-2'>
             <div className='d-flex justify-content-between my-3'>
