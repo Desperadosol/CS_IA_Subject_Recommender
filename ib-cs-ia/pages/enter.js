@@ -17,7 +17,7 @@ export default function Enter(props) {
                 <AlertCard>
                     <div className="card-body d-flex flex-column justify-content-center align-items-center">
                         <h2 className="card-title mb-3">You're signed in</h2>
-                        <a href="/" className="fs-5 link-underline-dark link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "black"}}>Go to the starting page&rarr;</a>
+                        <a href="/" className="fs-5 link-underline-white link-offset-1" style={{color: "white"}}>Go to the starting page&rarr;</a>
                     </div>
                 </AlertCard> 
                 : 

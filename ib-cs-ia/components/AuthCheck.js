@@ -10,7 +10,7 @@ export default function AuthCheck(props) {
     <AlertCard>
         <div className="card-body d-flex flex-column justify-content-center align-items-center">
             <h2 className="card-title mb-3 fs-3">You must be signed in</h2>
-            <a href="/enter" className="fs-5 link-underline-dark link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "black"}}>Go to the logging page&rarr;</a>           
+            <a href="/enter" className="fs-5 link-underline-white link-offset-1" style={{color: "white"}}>Go to the logging page&rarr;</a>           
         </div>
     </AlertCard>;
 }
