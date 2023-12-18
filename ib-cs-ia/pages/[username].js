@@ -1,6 +1,7 @@
 import UserProfile from "@/components/UserProfile";
 import Subjects from "@/components/Subjects";
 import { getUserWithUsername } from "@/lib/firestore_interface";
+import AuthCheck from "@/components/AuthCheck";
 
 export async function getServerSideProps({ query }) {
     const { username } = query;
@@ -21,9 +22,11 @@ export async function getServerSideProps({ query }) {
 }
 export default function UserProfilePage({ userData }) {
     return (
-        <main>
-            <UserProfile user={userData}/>
-            <Subjects subjects={userData.sample}/>
-        </main>
+        <AuthCheck>
+            <main>
+                <UserProfile user={userData}/>
+                <Subjects subjects={userData.sample}/>
+            </main>
+        </AuthCheck>
     );
 }
