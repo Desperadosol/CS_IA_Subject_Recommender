@@ -47,7 +47,7 @@ export default function UserProfilePage({ initialUserData }) {
 
     return (
         <AuthCheck>
-            <main>
+            <main style={{minHeight: "100vh"}}>
                 <UserProfile userData={userData}/>
                 {
                 userData && userData.answers.length > 0 ?
