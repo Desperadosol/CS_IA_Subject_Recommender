@@ -19,9 +19,8 @@ export const questions = [
     "I am open to exploring my creativity through problem-solving and mathematical exploration."
 ]
 
-const numberOfAnswers = questions.length;
 
-export const defaultAnswers = new Array(numberOfAnswers).fill(0)
+export const defaultAnswers = []
 
 export const defaultSubjects = [
     {
