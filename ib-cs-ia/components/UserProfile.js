@@ -1,10 +1,9 @@
 import Image from "next/image";
 import * as client from '@/lib/client';
 
-export default function UserProfile({ user }) {
-  
+export default function UserProfile({ user, showButton }) {
   return (
-    <div className="container mt-4">
+    <div className="container my-4">
       <div className="card">
         <div className="card-header">
           <h3>User Profile</h3>
@@ -23,7 +22,7 @@ export default function UserProfile({ user }) {
             <div className="col-md-8">
               <h5 className="card-title">{user.displayName}</h5>
               <p className="card-text">Email: {user.email}</p>
-              <Buttons user={user} />
+              <Buttons user={user} showButton={showButton}/>
             </div>
           </div>
         </div>
@@ -32,12 +31,12 @@ export default function UserProfile({ user }) {
   );
 }
 
-function Buttons({ user }) {
+function Buttons({ user, showButton }) {
   return (
       <div className="container">
           <div className="row justify-content-center">
               <div className="col-auto">
-                  <button className="btn btn-primary btn-lg" onClick={() => client.updateUserRecommendations(user.uid)}>Predictions</button>
+                  <button className="btn btn-primary btn-lg" disabled={!showButton} onClick={() => client.updateUserRecommendations(user.uid)}>Predictions</button>
               </div>
           </div>   
       </div>

@@ -2,6 +2,11 @@
     --primary: #ffa91f;
 }
 
+.vertical-line {
+  border-left: 1px solid white;
+  height: 50px; /* Adjust the height as needed */
+}
+
 .custom-loader-icon {
     border: 10px solid var(--primary); 
     border-top: 10px solid #ff931f; 

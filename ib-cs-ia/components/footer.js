@@ -26,10 +26,6 @@ export default function Footer() {
         </div>
       </div>
       <style jsx>{`
-        .vertical-line {
-          border-left: 1px solid white;
-          height: 50px; /* Adjust the height as needed */
-        }
         .custom-link {
           background-color: #bbbbbb;
         }
