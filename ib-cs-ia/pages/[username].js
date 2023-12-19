@@ -24,7 +24,7 @@ export default function UserProfilePage({ userData }) {
     return (
         <AuthCheck>
             <main>
-                <UserProfile user={userData}/>
+                <UserProfile userData={userData}/>
                 <Subjects subjects={userData.sample}/>
             </main>
         </AuthCheck>
