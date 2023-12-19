@@ -4,7 +4,6 @@ import { getUserWithUsername } from "@/lib/firestore_interface";
 import AuthCheck from "@/components/AuthCheck";
 import { firestore } from '../lib/firebase';
 
-import * as client from '@/lib/client';
 import { UserContext } from "@/lib/context";
 import React, { useContext, useState, useEffect } from 'react';
 import Loader from "@/components/Loader";
@@ -48,13 +47,13 @@ export default function UserProfilePage({ initialUserData }) {
     return (
         <AuthCheck>
             <main style={{minHeight: "100vh"}}>
-                <UserProfile userData={userData}/>
+                <UserProfile user={user}/>
                 {
                 userData && userData.answers.length > 0 ?
                     userData.sample && userData.sample.length > 0 ? 
                         <Subjects subjects={userData.sample}/>
                         :
-                        <Buttons user={user}/>
+                        null
                     :
                     <NoAnswers/>
                 }
@@ -63,17 +62,7 @@ export default function UserProfilePage({ initialUserData }) {
     );
 }
 
-function Buttons({ user }) {
-    return (
-        <div className="container">
-            <div className="row justify-content-center">
-                <div className="col-auto">
-                    <button className="btn btn-primary btn-lg" onClick={() => client.updateUserRecommendations(user.uid)}>Predictions</button>
-                </div>
-            </div>   
-        </div>
-    );
-}
+
 
 function NoAnswers() {
     return (
