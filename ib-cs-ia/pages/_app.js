@@ -1,6 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css'
-import Layout from '@/components/Layout';
+import Layout from '../components/Layout';
 import { Toaster } from 'react-hot-toast';
 import { UserContext } from '@/lib/context';
 import { useUserData } from '@/lib/hooks';
