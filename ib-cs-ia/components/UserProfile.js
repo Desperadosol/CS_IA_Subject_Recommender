@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { updateUserRecommendations } from '@/lib/client';
+import Link from "next/link";
 
 export default function UserProfile({ user, showButton }) {
   return (
@@ -40,7 +41,7 @@ function Buttons({ user, showButton }) {
               </div>
               <div className="col-auto">
                   <button className="btn btn-primary btn-lg" disabled={!showButton}>
-                    <a href="/adjust" className="text-white" style={{textDecoration: "none"}}>Adjust Model</a>
+                    <Link href="/adjust" className="text-white" style={{textDecoration: "none"}}>Adjust Model</Link>
                   </button>
               </div>
           </div>   

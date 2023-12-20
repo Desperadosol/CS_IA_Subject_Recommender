@@ -7,8 +7,8 @@ export default function HowItWorks() {
           className="text-center text-white display-4 fw-semibold"
           style={{ marginBottom: "64px" }}
         >
-          <span style={{ color: "var(--primary)" }}>"</span>How Does It Work?
-          <span style={{ color: "var(--primary)" }}>"</span>
+          <span style={{ color: "var(--primary)" }}>&quot;</span>How Does It Work?
+          <span style={{ color: "var(--primary)" }}>&quot;</span>
         </h2>
         <div className="row">
           <div

@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 export default function HomeSection() {
     const introHeaderVariants = {
@@ -41,7 +42,7 @@ export default function HomeSection() {
                     </div>
                     <div className="m-4">
                         <motion.button initial="hide" whileInView="show3" exit="hide" variants={introHeaderVariants} className="" style={{marginLeft: "5%", outline: "none", border: "none", background: "none"}}>
-                            <a href="/survey" className="display-5 fw-semibold link-underline-warning link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "var(--primary)"}}>Try Now &rarr;</a>
+                            <Link href="/survey" className="display-5 fw-semibold link-underline-warning link-offset-1 link-underline-opacity-0 link-underline-opacity-100-hover" style={{color: "var(--primary)"}}>Try Now &rarr;</Link>
                         </motion.button>
                     </div>
                 </div>
