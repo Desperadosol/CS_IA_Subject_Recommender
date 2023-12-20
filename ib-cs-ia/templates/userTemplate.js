@@ -60,7 +60,7 @@ export const defaultSubjects = [
         "description": "The German subject in the IB curriculum focuses on developing language skills in German. It involves the study of grammar, vocabulary, reading, writing, and speaking in German. Students explore various cultural aspects, analyze texts, and improve their communication skills in the German language."
     },
     {
-        "name": "Business&Management",
+        "name": "Business and Management",
         "score": 0.0,
         "group": "group3",
         "description": "The Business & Management subject in the IB curriculum focuses on developing knowledge and understanding of business principles and practices. It involves the study of various business functions, such as marketing, finance, operations, and human resources. Students learn about business strategies, decision-making processes, and ethical considerations in the business world."

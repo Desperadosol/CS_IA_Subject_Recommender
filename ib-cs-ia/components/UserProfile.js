@@ -1,5 +1,5 @@
 import Image from "next/image";
-import * as client from '@/lib/client';
+import { updateUserRecommendations } from '@/lib/client';
 
 export default function UserProfile({ user, showButton }) {
   return (
@@ -36,7 +36,12 @@ function Buttons({ user, showButton }) {
       <div className="container">
           <div className="row justify-content-center">
               <div className="col-auto">
-                  <button className="btn btn-primary btn-lg" disabled={!showButton} onClick={() => client.updateUserRecommendations(user.uid)}>Predictions</button>
+                  <button className="btn btn-primary btn-lg" disabled={!showButton} onClick={() => updateUserRecommendations(user.uid)}>Update Predictions</button>
+              </div>
+              <div className="col-auto">
+                  <button className="btn btn-primary btn-lg" disabled={!showButton}>
+                    <a href="/adjust" className="text-white" style={{textDecoration: "none"}}>Adjust Model</a>
+                  </button>
               </div>
           </div>   
       </div>

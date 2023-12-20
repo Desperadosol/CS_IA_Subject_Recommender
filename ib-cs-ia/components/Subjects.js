@@ -20,6 +20,7 @@ export default function Subjects({ subjects }) {
     <main>
       {subjects.map((subject, index) => (
         <Subject
+          key={index}
           index={index}
           name={subject.name}
           level={subject.level}

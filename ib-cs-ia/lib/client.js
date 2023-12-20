@@ -25,7 +25,8 @@ export async function updateUserRecommendations(uid) {
   data.subjects = response.data.subjects;
   data.sample = response.data.sample;
 
-  updateUser(uid, data)
+  updateUser(uid, data);
+  console.log("updated recommendations");
 }
 
 export async function trainModelWithUserChoice(uid) {
@@ -34,6 +35,6 @@ export async function trainModelWithUserChoice(uid) {
 
   const response = await axios.post('https://servernn-production.up.railway.app/api/train', data);
   // console.log(response.data);
-
+  
 }
 

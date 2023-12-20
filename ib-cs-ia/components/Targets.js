@@ -3,10 +3,13 @@ import { useState, useContext, useEffect } from "react";
 import { UserContext } from "@/lib/context";
 
 import { defaultSubjects } from "@/templates/userTemplate";
+import { trainModelWithUserChoice } from "@/lib/client";
 
+import { useRouter } from "next/router";
 
 export default function Targets() {
   const { user, username } = useContext(UserContext);
+  const router = useRouter();
 
   const countSubjectsInGroup = (subjects, groupName) => subjects.filter(subject => subject.group === groupName).length;
   const giveNamesForGroup = (subjects, groupName) => subjects.filter(subject => subject.group === groupName).map(subject => subject.name);
@@ -21,25 +24,30 @@ export default function Targets() {
   const [error, setError] = useState(true);
 
   useEffect(() => {
-    setSelectedValues([...group1, ...group2, ...group3, ...group4, ...group5]);
-    if ((group1[0] + group2[0] != 2) && group1.reduce((a,b) => a + b, 0) === 1 && group2.some(option => option === 1) && group3.some(option => option === 1) && group4.some(option => option === 1) && group5.reduce((a,b) => a + b, 0) === 1 && selectedValues.reduce((a,b) => a + b, 0) === 6) {
+    const newSelectedValues = [...group1, ...group2, ...group3, ...group4, ...group5];
+    setSelectedValues(newSelectedValues);
+    if ((group1[0] + group2[0] != 2) && group1.reduce((a,b) => a + b, 0) === 1 && group2.some(option => option === 1) && group3.some(option => option === 1) && group4.some(option => option === 1) && group5.reduce((a,b) => a + b, 0) === 1 && newSelectedValues.reduce((a,b) => a + b, 0) === 6) {
       setError(false);
     } else {
       setError(true);
     }
-  }, [group1, group2, group3, group4, group5, selectedValues] );
+  }, [group1, group2, group3, group4, group5] );
 
   function onSubmit(event) {
     event.preventDefault();
 
     updateUserTargets(user.uid, selectedValues);
+
+    trainModelWithUserChoice(user.uid);
+
+    // router.push(`/${username}`);
   }
 
   return (
     <form onSubmit={onSubmit} className="m-4">
       <div className="row">
         <div className="col-md-4 border-end border-2 text-center">
-          <div className="mb-3">
+          <div className="my-3">
             <h4>Studies in language and literature</h4>
           </div>
           <CheckboxGroup
@@ -49,7 +57,7 @@ export default function Targets() {
           />
         </div>
         <div className="col-md-4 border-end border-2 text-center">
-          <div className="mb-3">
+          <div className="my-3">
             <h4>Language Acquisition</h4>
           </div>
           <CheckboxGroup
@@ -59,7 +67,7 @@ export default function Targets() {
           />
         </div>
         <div className="col-md-4 text-center">
-          <div className="mb-3">
+          <div className="my-3">
             <h4>Individuals and Societies</h4>
           </div>
           <CheckboxGroup
@@ -72,7 +80,7 @@ export default function Targets() {
 
       <div className="row mt-3">
         <div className="col-md-4 border-end border-2 text-center">
-          <div className="mb-3">
+          <div className="my-3">
             <h4>Experimental Sciences</h4>
           </div>
           <CheckboxGroup
@@ -82,7 +90,7 @@ export default function Targets() {
           />
         </div>
         <div className="col-md-4 border-end border-2 text-center">
-          <div className="mb-3">
+          <div className="my-3">
             <h4>Mathematical Studies</h4>
           </div>
           <CheckboxGroup
@@ -95,7 +103,7 @@ export default function Targets() {
 
       <div className="mt-3 text-center">
         <button type="submit" className="btn btn-outline-success btn-lg" disabled={error}>
-          Submit
+          Submit&Train
         </button>
       </div>
     </form>
@@ -113,10 +121,13 @@ function CheckboxGroup({options, groupName, stateHook}) {
   }
  
   return (
-    <div onChange={onChangeValue} className="d-flex flex-column align-items-center">
+    <div onChange={onChangeValue} className="d-flex flex-column align-items-center mb-3">
       {options.map((option, index) => 
-        <div key={option}>
-           <label style={{width: "250px"}} className={`btn btn-lg m-1 ${selectedOption[index] === 1 ? 'btn-dark' : 'btn-outline-dark'}`}> <input type="checkbox" value={option} name={groupName} checked={selectedOption[index] === 1} onChange={onChangeValue} className="btn-check"/> {option} </label>
+        <div className="px-3" style={{minWidth: "100%"}} key={option}>
+           <label style={{minWidth: "100%"}} className={`btn btn-lg m-1 ${selectedOption[index] === 1 ? 'btn-dark' : 'btn-outline-dark'}`}>
+             <input type="checkbox" value={option} name={groupName} checked={selectedOption[index] === 1} onChange={onChangeValue} className="btn-check"/> 
+             {option} 
+            </label>
         </div>
       )}
     </div>
