@@ -1,8 +1,9 @@
 :root {
-    --primary: #ffa91f;
+  --primary: #ffa91f;
 }
 
-html, body {
+html,
+body {
   padding: 0;
   margin: 0;
   overflow-x: hidden;
@@ -14,15 +15,19 @@ html, body {
 }
 
 .custom-loader-icon {
-    border: 10px solid var(--primary); 
-    border-top: 10px solid #ff931f; 
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 2s linear infinite;
+  border: 10px solid var(--primary);
+  border-top: 10px solid #ff931f;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
   }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
+  100% {
+    transform: rotate(360deg);
   }
+}
