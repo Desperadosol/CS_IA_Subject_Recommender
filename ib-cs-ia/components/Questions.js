@@ -90,22 +90,13 @@ export default function Questions() {
           <hr className="mb-4" style={{width: "100%", color: 'white'}}/>
           <div className='my-3'>
             {currentQuestion !== questions.length - 1 ? 
-              <button onClick={handleNextQuestion} disabled={userAnswers[currentQuestion] === null} className='text-white fs-4 link-offset-1'>Next Question</button> :
-              <button onClick={handleSubmit} disabled={userAnswers.some(answer => answer === null)} className='text-white fs-4 link-offset-1'>Submit</button>
+              <button onClick={handleNextQuestion} disabled={userAnswers[currentQuestion] === null} className='btn btn-light btn-lg'>Next Question</button> :
+              <button onClick={handleSubmit} disabled={userAnswers.some(answer => answer === null)} className='btn btn-light btn-lg'>Submit</button>
             }
           </div>
         </div>
       </div>
-      <style jsx>{`
-          button {
-            background: none;
-            border: none;
-          }
-          button:hover {
-            text-decoration: underline;
-            cursor: pointer;
-          }
-        `}</style>
+      
     </section>
   );
 };

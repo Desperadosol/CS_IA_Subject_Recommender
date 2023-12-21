@@ -1,21 +1,23 @@
 const TechnologyCard = ({ iconURL, name, description, link }) => (
   <>
-  <a href={link} target="_blank"  rel="noopener noreferrer" className="col-md-4 mb-4" style={{padding: "30px 40px 20px 40px", textDecoration: "none"}}>
-    <div className="card card-custom">
-      <div className="card-body text-left d-flex flex-column" style={{justifyContent: "space-between"}}>
-        <img src={iconURL} width="72px"/>
-        <div>
-          <div className="d-flex " style={{width: "100%"}}>
-            <h5 className="card-title fs-3">{name}</h5>
-            
-            <img className="mx-2" src="/right-arrow.png" width="16px" height="16px" style={{transform: "rotate(-45deg)"}}/>
-            
+  <div className="col-md-4 mb-4" style={{padding: "30px 40px 20px 40px"}}>
+    <a href={link} target="_blank"  rel="noopener noreferrer" style={{textDecoration: "none"}}>
+      <div className="card card-custom">
+        <div className="card-body text-left d-flex flex-column" style={{justifyContent: "space-between"}}>
+          <img src={iconURL} width="72px"/>
+          <div>
+            <div className="d-flex " style={{width: "100%"}}>
+              <h5 className="card-title fs-3">{name}</h5>
+              
+              <img className="mx-2" src="/right-arrow.png" width="16px" height="16px" style={{transform: "rotate(-45deg)"}}/>
+              
+            </div>
+            <p className="card-text fs-6" style={{color: "#404040"}}>{description}</p>
           </div>
-          <p className="card-text fs-6" style={{color: "#404040"}}>{description}</p>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
   <style jsx>{`
     .card-custom {
       min-height: 250px;

@@ -36,18 +36,27 @@ export default function Navbar() {
                 Form
               </Link>
             </li>
-            <li className="nav-item">
-              <Link className="nav-link" href={`/${username}`}>
-                Profile
-              </Link>
-            </li>
+            {username ?
+              <li className="nav-item">
+                <Link className="nav-link" href={`/${username}`}>
+                  Profile
+                </Link>
+              </li>
+              :
+              null
+            } 
           </ul>
           <div className="u-flex">
             {user? 
             <SignOutButton /> :
-            <Link href="/enter">
-              <button className="btn btn-outline-success">Log in</button>
-            </Link>
+            <>
+              <Link href="/enter" className='mx-3'>
+                <button className="btn btn-light" style={{border: "1px solid black"}}>Log In</button>
+              </Link>
+              <Link href="/enter" >
+                <button className="btn btn-dark">Sign Up</button>
+              </Link>
+            </>
             }
           </div>
         </div>
@@ -62,5 +71,5 @@ function SignOutButton() {
     auth.signOut();
     router.push('/');
   }
-  return <button className="btn btn-outline-danger" onClick={() => customSignOut()}>Sign Out</button>
+  return <button className="btn btn-dark" onClick={() => customSignOut()}>Sign Out</button>
 }

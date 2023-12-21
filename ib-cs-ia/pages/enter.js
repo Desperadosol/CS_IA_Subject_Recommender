@@ -23,9 +23,8 @@ export default function Enter(props) {
                 </AlertCard> 
                 : 
                 <AlertCard>
-                    <div>
-                        <h5 className="card-title">Sign Up</h5>
-                        <p className="card-text">Please sign up using your Google account.</p>
+                    <div className='text-center mb-2'>
+                        <h5 className="card-title fs-3">Log in to Picker</h5>
                     </div>
                     <SignInButton />
                 </AlertCard>
@@ -41,11 +40,11 @@ function SignInButton() {
     };
 
     return (
-        <div className='mt-3 d-flex align-items-center'>
-          <button className='btn btn-outline-primary d-flex align-items-center' onClick={signInWithGoogle}>
-            Sign in with Google
+        <div className='mt-3 d-flex align-items-center justify-content-center'>
+          <button className='btn btn-outline-light d-flex align-items-center' onClick={signInWithGoogle}>
+            Continue with Google
+            <img src='/google.png' alt="Google" style={{ maxWidth: '32px', maxHeight: '32px', marginLeft: "4px"}} />
           </button>
-          <img src='/google.png' alt="Google" style={{ maxWidth: '32px', maxHeight: '32px' }} />
         </div>
     );
 }
