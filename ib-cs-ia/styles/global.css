@@ -2,6 +2,12 @@
     --primary: #ffa91f;
 }
 
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+}
+
 .vertical-line {
   border-left: 1px solid white;
   height: 50px; /* Adjust the height as needed */
