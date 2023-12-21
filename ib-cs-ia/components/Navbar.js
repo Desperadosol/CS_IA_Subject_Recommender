@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { UserContext } from "@/lib/context";
 import { useContext } from 'react';
 import  { auth } from '../lib/firebase';
+import { useRouter } from 'next/router';
 
 export default function Navbar() {
   const { user, username } = useContext(UserContext);
@@ -56,5 +57,10 @@ export default function Navbar() {
 };
 
 function SignOutButton() {
-  return <button className="btn btn-outline-danger" onClick={() => auth.signOut()}>Sign Out</button>
+  const router = useRouter();
+  function customSignOut() {
+    auth.signOut();
+    router.push('/');
+  }
+  return <button className="btn btn-outline-danger" onClick={() => customSignOut()}>Sign Out</button>
 }
