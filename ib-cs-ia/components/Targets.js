@@ -40,7 +40,7 @@ export default function Targets() {
 
     trainModelWithUserChoice(user.uid);
 
-    // router.push(`/${username}`);
+    router.push(`/${username}`);
   }
 
   return (
