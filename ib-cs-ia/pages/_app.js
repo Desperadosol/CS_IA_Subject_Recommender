@@ -5,7 +5,7 @@ import { Toaster } from 'react-hot-toast';
 import { UserContext } from '../lib/context';
 import { useUserData } from '../lib/hooks';
 import { useEffect } from 'react';
-
+import Head from 'next/head';
 
 
 function App({ Component, pageProps }) {
@@ -17,6 +17,10 @@ function App({ Component, pageProps }) {
 
     return (
         <UserContext.Provider value={userData}>
+            <Head>
+                <link rel="icon" href="/favicon.ico" />
+                <title>Picker</title>
+            </Head>
             <Layout>
                 <Component {...pageProps} />
                 <Toaster />
