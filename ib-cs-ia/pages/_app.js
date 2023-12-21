@@ -20,6 +20,11 @@ function App({ Component, pageProps }) {
             <Head>
                 <link rel="icon" href="/favicon.ico" />
                 <title>Picker</title>
+                <meta property="description" content="Pick your future with AI-powered subject recommender" />
+                <meta property="og:title" content="Picker" />
+                <meta property="og:description" content="Pick your future with AI-powered subject recommender" />
+                <meta property="og:image" content="./preview.png" />
+                <meta property="og:url" content="https://picker.com" />
             </Head>
             <Layout>
                 <Component {...pageProps} />
