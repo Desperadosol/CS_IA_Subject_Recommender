@@ -1,4 +1,13 @@
-// The way to improve, create video for each step of the user path and allocate text next to the video, also create a "path" - a narrow line between the videos
+/*
+ * This file contains a single React component: HowItWorks.
+ *
+ * HowItWorks is a functional component that returns a section of a webpage.
+ * The section contains:
+ * - A title.
+ * - A row with two columns. The first column contains a video player, and the second column contains a series of steps with descriptions.
+ * - An SVG for decorative purposes.
+ * - A style element with CSS for the section, the video container, and the text container.
+ */
 export default function HowItWorks() {
   return (
     <section className="how-it-works-section">

@@ -1,3 +1,12 @@
+/*
+ * This is a React functional component named HomeSection.
+ * It uses the framer-motion library for animation.
+ * The component contains:
+ * - A section with a background image and a div that aligns its children vertically.
+ * - Inside the div, there is another div with two main parts, each containing a motion component (h1, h2, and button).
+ * - The motion components have initial, whileInView, and exit props that determine their animation states.
+ * - The button contains a Link component from the next/link library, which navigates to the "/survey" route when clicked.
+ */
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 

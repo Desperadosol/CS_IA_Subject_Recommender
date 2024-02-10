@@ -1,3 +1,11 @@
+/*
+ * This file contains a single React component: Loader.
+ *
+ * Loader is a functional component that takes one prop: show.
+ * It returns a div that covers the entire viewport and contains a loading icon.
+ * The div is only displayed if the show prop is true.
+ * The loading icon is represented by a div with a custom class.
+ */
 export default function Loader({show}) {
     return (
         <>

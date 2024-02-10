@@ -1,3 +1,14 @@
+/*
+ * This file contains several functions that interact with the Firestore database.
+ * It imports the necessary Firestore functions from firebase/firestore and the firestore object from firebase.js.
+ *
+ * getUser is a function that takes a user's uid, retrieves the user's data from the Firestore database, and returns the data.
+ * If the user does not exist, it logs a message to the console.
+ *
+ * updateUser is a function that takes a user's uid and an object of updates, and applies the updates to the user's document in the Firestore database.
+ *
+ * getUserWithUsername is a function that takes a username, queries the Firestore database for a user with that username, and returns the user's document.
+ */
 import { firestore } from "./firebase.js";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 
@@ -23,4 +34,3 @@ export async function getUserWithUsername(username) {
 	const userDoc = (await query.get()).docs[0];
 	return userDoc;
 }
-

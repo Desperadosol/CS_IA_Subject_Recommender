@@ -1,3 +1,14 @@
+/*
+ * This file contains the main App component for the Next.js application.
+ * It imports the necessary modules, stylesheets, and components.
+ * It uses the useUserData hook to get the user's data and the UserContext to provide this data to child components.
+ * It uses the useEffect hook to import the Bootstrap JavaScript bundle after the component mounts.
+ * It returns a UserContext.Provider that wraps a Layout component, which in turn wraps the Component prop.
+ * The Component prop represents the current page of the application.
+ * The pageProps prop is spread onto the Component, passing all of its properties as props to the Component.
+ * The Toaster component from react-hot-toast is used to display toast notifications.
+ * The Head component from Next.js is used to add elements to the head of the HTML document.
+ */
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../styles/global.css'
 import Layout from '@/components/layout';

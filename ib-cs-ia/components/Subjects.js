@@ -1,3 +1,16 @@
+/*
+ * This file contains two React components: Subjects and Subject.
+ *
+ * Subjects is a functional component that takes one prop: subjects.
+ * It returns a main element that maps over the subjects prop and renders a Subject component for each subject.
+ * It uses two arrays, ColorMap and GroupMap, to determine the colors and group names for the subjects.
+ *
+ * Subject is a functional component that takes several props: index, name, level, group, score, description, bgColor, color, and waveColor.
+ * It returns a section element that represents a subject.
+ * The section contains a row with two columns. The first column contains the subject name, level, group, and score. The second column contains the subject description.
+ * The section has a custom background color, text color, and wave color.
+ * The section also includes an SVG for decorative purposes.
+ */
 export default function Subjects({ subjects }) {
   const ColorMap = [
     "#ffa91f",
@@ -45,7 +58,7 @@ function Subject({
   description,
   bgColor,
   color,
-  waveColor
+  waveColor,
 }) {
   return (
     <section
@@ -57,7 +70,7 @@ function Subject({
         position: "relative",
       }}
     >
-      <div className="row" style={{ minHeight: "500px" }}>
+      <div className="row " style={{ minHeight: "500px" }}>
         <div className="col-md-6 p-3 d-flex flex-column justify-content-center">
           <div className="d-flex flex-column justify-content-center align-items-center text-center">
             <h2 className="display-4 mb-3">
@@ -81,13 +94,16 @@ function Subject({
           </p>
         </div>
       </div>
+      <br/>
       <div className="custom-shape-divider-bottom-1703021660">
         <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-            style={{ transform: index % 2 === 0 ? "rotateY(180deg)" : "rotateY(0deg)" }}
+          data-name="Layer 1"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 1200 120"
+          preserveAspectRatio="none"
+          style={{
+            transform: index % 2 === 0 ? "rotateY(180deg)" : "rotateY(0deg)",
+          }}
         >
           <path
             d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z"
@@ -123,7 +139,7 @@ function Subject({
           position: relative;
           display: block;
           width: calc(100% + 1.3px);
-          height: 100px;
+          height: 50px;
         }
       `}</style>
     </section>

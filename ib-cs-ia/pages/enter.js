@@ -1,3 +1,25 @@
+/*
+ * This file contains a single React component: Enter.
+ * It also contains several helper components: SignInButton, UsernameForm, and UsernameMessage.
+ *
+ * Enter is a functional component that manages the user's sign-in state.
+ * It uses the UserContext to get the current user and username.
+ * It returns a main element that contains a SignInButton component if the user is not signed in, a UsernameForm component if the user is signed in but does not have a username, or an AlertCard component if the user is signed in and has a username.
+ *
+ * SignInButton is a functional component that returns a button for signing in with Google.
+ * When the button is clicked, it calls the signInWithGoogle function, which signs in the user with Google using Firebase's signInWithPopup function.
+ *
+ * UsernameForm is a functional component that manages a form for choosing a username.
+ * It maintains state for the form value, whether the username is valid, and a loading state.
+ * It uses the UserContext to get the current user and username.
+ * It uses the useEffect hook to check the username whenever the form value changes.
+ * It provides functions to handle form submission, form value changes, and username checking.
+ * When the form is submitted, it creates a batch write to the Firestore database to set the user's document and a document in the usernames collection.
+ * It returns a section element that contains the form.
+ *
+ * UsernameMessage is a functional component that takes several props: username, isValid, and loading.
+ * It returns a message based on the username, isValid, and loading props.
+ */
 import { auth, firestore, googleAuthProvider } from '../lib/firebase';
 import { useEffect, useState, useCallback, useContext } from 'react';
 import { UserContext } from "@/lib/context";

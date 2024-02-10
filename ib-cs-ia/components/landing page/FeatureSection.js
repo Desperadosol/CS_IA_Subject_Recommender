@@ -1,3 +1,12 @@
+/*
+ * This is a React functional component named FeatureSection.
+ * It returns a section of a webpage with a specific layout and style.
+ * The section contains:
+ * - A heading with some text underlined.
+ * - A row with three columns, each containing an image, a heading, and a paragraph.
+ * - A div with a wave-shaped SVG.
+ * - A style element with CSS for the wave div and the SVG element.
+ */
 export default function FeatureSection() {
     return (
       <section className="text-center my-5 pt-3" style={{position: "relative"}}>

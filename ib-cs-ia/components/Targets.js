@@ -1,3 +1,19 @@
+/*
+ * This file contains two React components: Targets and CheckboxGroup.
+ *
+ * Targets is a functional component that manages a form for a series of checkboxes.
+ * It uses the UserContext to get the current user and username.
+ * It uses the useRouter hook from Next.js to redirect the user after form submission.
+ * It maintains state for the selected checkboxes in each group and an error state.
+ * It provides functions to count the subjects in a group, get the names of the subjects in a group, and submit the form.
+ * The form is displayed in a series of rows, each containing a CheckboxGroup for a different group of subjects.
+ * The form also includes a Submit button that is disabled if the error state is true.
+ *
+ * CheckboxGroup is a functional component that takes several props: options, groupName, and stateHook.
+ * It returns a div that maps over the options prop and renders a checkbox for each option.
+ * It uses the stateHook prop to manage the selected checkboxes in the group.
+ * It provides a function to handle checkbox changes.
+ */
 import { updateUserTargets } from "@/lib/client";
 import { useState, useContext, useEffect } from "react";
 import { UserContext } from "@/lib/context";

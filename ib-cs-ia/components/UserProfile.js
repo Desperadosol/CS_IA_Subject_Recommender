@@ -1,12 +1,28 @@
+/*
+ * This file contains two React components: UserProfile and Buttons.
+ *
+ * UserProfile is a functional component that takes two props: user and showButton.
+ * It returns a card that displays the user's profile picture, display name, and email.
+ * The card also includes a Buttons component.
+ * The user's profile picture is displayed using the Image component from Next.js.
+ * The showButton prop determines whether the Update Predictions button is enabled.
+ *
+ * Buttons is a functional component that takes two props: user and showButton.
+ * It returns a div that contains an Update Predictions button.
+ * When the button is clicked, it calls the updateUserRecommendations function with the user's uid.
+ * The button is disabled if the showButton prop is false.
+ */
 import Image from "next/image";
-import { updateUserRecommendations } from '@/lib/client';
-import Link from "next/link";
+import { updateUserRecommendations } from "@/lib/client";
 
 export default function UserProfile({ user, showButton }) {
   return (
-    <div className="container my-4">
-      <div className="card">
-        <div className="card-header">
+    <div className="container pt-5">
+      <div className="card bg-dark text-white ">
+        <div
+          className="card-header"
+          style={{ borderBottom: "1px solid white" }}
+        >
           <h3>User Profile</h3>
         </div>
         <div className="card-body">
@@ -23,7 +39,7 @@ export default function UserProfile({ user, showButton }) {
             <div className="col-md-8">
               <h5 className="card-title">{user.displayName}</h5>
               <p className="card-text">Email: {user.email}</p>
-              <Buttons user={user} showButton={showButton}/>
+              <Buttons user={user} showButton={showButton} />
             </div>
           </div>
         </div>
@@ -34,17 +50,18 @@ export default function UserProfile({ user, showButton }) {
 
 function Buttons({ user, showButton }) {
   return (
-      <div className="container">
-          <div className="row justify-content-center">
-              <div className="col-auto">
-                  <button className="btn btn-primary btn-lg" disabled={!showButton} onClick={() => updateUserRecommendations(user.uid)}>Update Predictions</button>
-              </div>
-              <div className="col-auto">
-                  <button className="btn btn-primary btn-lg" disabled={!showButton}>
-                    <Link href="/adjust" className="text-white" style={{textDecoration: "none"}}>Adjust Model</Link>
-                  </button>
-              </div>
-          </div>   
+    <div className="container">
+      <div className="row">
+        <div className="col-auto p-0">
+          <button
+            className="btn btn-light btn-lg"
+            disabled={!showButton}
+            onClick={() => updateUserRecommendations(user.uid)}
+          >
+            Update Predictions
+          </button>
+        </div>
       </div>
+    </div>
   );
 }

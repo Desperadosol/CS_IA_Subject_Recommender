@@ -1,3 +1,16 @@
+/*
+ * This file contains two React components: TechnologyCard and TechnologiesSection.
+ *
+ * TechnologyCard is a functional component that takes four props: iconURL, name, description, and link.
+ * It returns a card with an image, a title, a description, and a link to more information.
+ * The card has a custom style and a hover effect.
+ *
+ * TechnologiesSection is a functional component that returns a section of a webpage.
+ * The section contains a title and a row of three TechnologyCards.
+ * Each card represents a technology used in the project: TensorFlow, Flask, and Next.js.
+ * The section also includes an SVG for decorative purposes.
+ */
+
 const TechnologyCard = ({ iconURL, name, description, link }) => (
   <>
   <div className="col-md-4 mb-4" style={{padding: "30px 40px 20px 40px"}}>

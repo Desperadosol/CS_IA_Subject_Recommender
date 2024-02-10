@@ -1,3 +1,14 @@
+/*
+ * This file contains two React components: Navbar and SignOutButton.
+ *
+ * Navbar is a functional component that uses the UserContext to check if a user is logged in.
+ * It returns a navigation bar with links to different pages of the website.
+ * If a user is logged in, it displays a Profile link and a Sign Out button.
+ * If a user is not logged in, it displays Log In and Sign Up buttons.
+ *
+ * SignOutButton is a functional component that signs out the user when clicked.
+ * It uses the auth object from Firebase to sign out the user and the useRouter hook from Next.js to redirect the user to the homepage.
+ */
 import Link from 'next/link';
 import { UserContext } from "@/lib/context";
 import { useContext } from 'react';
@@ -36,6 +47,11 @@ export default function Navbar() {
                 Form
               </Link>
             </li>
+            <li className="nav-item">
+              <Link href="/adjust" className="nav-link">
+                Adjust
+              </Link>
+            </li> 
             {username ?
               <li className="nav-item">
                 <Link className="nav-link" href={`/${username}`}>

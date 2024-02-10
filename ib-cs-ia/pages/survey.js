@@ -1,5 +1,11 @@
-import { UserContext } from "@/lib/context";
-import { useContext } from 'react';
+/*
+ * This file contains a single React component: Survey.
+ *
+ * Survey is a functional component that returns an AuthCheck component that wraps a main element.
+ * The main element contains a Questions component and a style element.
+ * The Questions component is imported from another file and manages a form for a series of questions.
+ * The style element contains CSS for the main element, setting the background color and aligning its contents in the center of the viewport.
+ */
 import Questions from "@/components/Questions";
 import AuthCheck from "@/components/AuthCheck";
 
