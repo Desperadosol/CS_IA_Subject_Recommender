@@ -24,15 +24,6 @@ export default function Footer() {
               />
             </Link>
           </div>
-          <div className="d-flex ">
-            <a href="https://github.com/Desperadosol" className="mx-2 custom-link fs-5" target="_blank"  rel="noopener noreferrer" style={{width: "50px", height: "50px", borderRadius: "30%"}}>
-              <img src="/github.png" width="50px"/>
-            </a>
-            <div className="vertical-line"></div>
-            <a href="https://www.linkedin.com/in/igor-homichenko-a76b88266" className="mx-2 custom-link fs-5" target="_blank"  rel="noopener noreferrer" style={{width: "50px", height: "50px", borderRadius: "30%"}}>
-              <img src="/linkedin.png" width="50px"/>
-            </a>
-          </div>
         </div>
       </div>
       <style jsx>{`
